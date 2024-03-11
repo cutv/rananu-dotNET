@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Common.Extensions
+namespace Rananu.Shared.Extensions
 {
     public static class StringExtensions
     {

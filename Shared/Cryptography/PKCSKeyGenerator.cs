@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Common.Sercurity
+namespace Rananu.Shared.Cryptography
 {
     public class PKCSKeyGenerator
     {
@@ -40,7 +40,7 @@ namespace Common.Sercurity
         /// <param name="segments">Fill out segments later.</param>
         public PKCSKeyGenerator(string keystring, sbyte[] salt, int iterationsMd5, int segments)
         {
-            this.Generate(keystring, salt, iterationsMd5, segments);
+            Generate(keystring, salt, iterationsMd5, segments);
         }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace Common.Sercurity
         {
             get
             {
-                return this.key;
+                return key;
             }
         }
 
@@ -61,7 +61,7 @@ namespace Common.Sercurity
         {
             get
             {
-                return this.iv;
+                return iv;
             }
         }
 
@@ -74,7 +74,7 @@ namespace Common.Sercurity
             {
                 byte[] key = Array.ConvertAll(this.key, b => unchecked((byte)b));
                 byte[] iv = Array.ConvertAll(this.iv, b => unchecked((byte)b));
-                return this.des.CreateEncryptor(key, iv);
+                return des.CreateEncryptor(key, iv);
             }
         }
 
@@ -151,10 +151,10 @@ namespace Common.Sercurity
                 Array.Copy(result, 0, keyMaterial, j * hashLength, result.Length);
             }
 
-            Array.Copy(keyMaterial, 0, this.key, 0, 8);
-            Array.Copy(keyMaterial, 8, this.iv, 0, 8);
+            Array.Copy(keyMaterial, 0, key, 0, 8);
+            Array.Copy(keyMaterial, 8, iv, 0, 8);
 
-            return this.Encryptor;
+            return Encryptor;
         }
 
         private ICryptoTransform _decryptorCryptoTransform;

@@ -6,12 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Common
+namespace Rananu.Shared
 {
-    public class NewtonsoftJsonConvert
+    public class NewtonsoftConvert
     {
         public JsonSerializerSettings _settings;
-        public NewtonsoftJsonConvert()
+        public NewtonsoftConvert()
         {
             _settings = new JsonSerializerSettings()
             {
@@ -24,8 +24,8 @@ namespace Common
             };
         }
 
-        private static readonly Lazy<NewtonsoftJsonConvert> _lazy = new Lazy<NewtonsoftJsonConvert>(() => new NewtonsoftJsonConvert());
-        public static NewtonsoftJsonConvert Instance => _lazy.Value;
+        private static readonly Lazy<NewtonsoftConvert> _lazy = new Lazy<NewtonsoftConvert>(() => new NewtonsoftConvert());
+        public static NewtonsoftConvert Instance => _lazy.Value;
 
         public string SerializeObject(object obj)
         {

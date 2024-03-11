@@ -5,7 +5,8 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-namespace Common.Sercuriry.Cryptography
+
+namespace Rananu.Shared.Cryptography
 {
     public static class CryptographyUtils
     {

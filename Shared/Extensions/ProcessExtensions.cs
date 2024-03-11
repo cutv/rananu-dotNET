@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Common.Extensions
+namespace Rananu.Shared.Extensions
 {
     public static class ProcessExtensions
     {
